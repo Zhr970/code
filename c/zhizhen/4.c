@@ -72,10 +72,22 @@ int main()
     printf("%d\n",strlen(&p));//随机值
     printf("%d\n",strlen(&p+1));//随机值
     printf("%d\n",strlen(&p[0]+1));//5
+    printf("\n");
 
+    int a[3][4] = {0};
 
-    
-
+    printf("%d\n", sizeof(a)) ;//48
+    printf("%d\n", sizeof(a[0][0]));//4
+    printf("%d\n", sizeof(a[0]));//16
+    printf("%d\n", sizeof(a[0]+1));//4
+    printf("%d\n", sizeof(*(a[0]+1)));//4
+    printf("%d\n", sizeof(a+1));//4 or 8
+    printf("%d\n", sizeof(*(a+1)));//16
+    printf("%d\n", sizeof (&a[0]+1));//4 or 8
+    printf("%d\n", sizeof(*(&a[0]+1)));//16
+    printf("%d\n", sizeof(*a));//16
+    printf("%d\n", sizeof(a[3]));//16
+    printf("\n");
 
     return 0;
 }
