@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/chen/code/c/my_strcpy_strcat'
-relocations:     []
-...
