@@ -66,25 +66,87 @@
 // }
 
 
-void* my_memcpy(void* dest,const void* src,size_t num)
-{
-    assert(dest && src);
-    void* ret=dest;
+// void* my_memcpy(void* dest,const void* src,size_t num)
+// {
+//     assert(dest && src);
+//     void* ret=dest;
 
-    while(num--)
-    {
-        *(char*)dest = *(char*)src;
-        dest = (char*)dest + 1;
-        src = (char*)src + 1;
-    }
-    return ret;
-}
-int main()
-{
-    int arr1[]={1,2,3,4,5,6,7};
-    int arr2[10]={0};
-    //memcpy(arr2,arr1,28);//28字节数
-    my_memcpy(arr2,arr1,28);
-    return 0;
-}
+//     while(num--)
+//     {
+//         *(char*)dest = *(char*)src;
+//         dest = (char*)dest + 1;
+//         src = (char*)src + 1;
+//     }
+//     return ret;
+// }
+// int main()
+// {
+//     int arr1[]={1,2,3,4,5,6,7};
+//     int arr2[10]={0};
+//     //memcpy(arr2,arr1,28);//28字节数
+//     my_memcpy(arr2,arr1,28);
+//     return 0;
+// }
 
+
+
+// void* my_memove(void* dest,const void* src,size_t num)
+// {
+//     assert(dest && src);
+//     void* ret = dest;
+//     if(dest<src)
+//     {
+//         //前->后
+//         while(num--)
+//         {
+//             *(char*)dest=*(char*)src;
+//             dest=(char*)dest + 1;
+//             src=(char*)src + 1;
+//         }
+//     }
+//     else
+//     {
+//         //后->前
+//         while(num--)
+//         {
+//             *((char*)dest+num) = *((char*)src+num);
+//         }
+//     }
+//     return ret;
+
+// }
+
+// int main()
+// {
+//     char arr[]={1,2,3,4,5,6,7,8,9,10};
+//     my_memove(arr+2,arr,5);
+//     int i =0;
+//     for(i=0;i<10;i++)
+//     {
+//         printf("%d\n",arr[i]);
+//     }
+//     return 0;
+// }
+
+//remcmp
+// int main()
+// {
+//     int arr1[]={1,2,3,4,5};
+//     int arr2[]={1,2,3};
+//     int arr3[]={1,3,2};
+//     int ret1=memcmp(arr1,arr2,12);
+//     printf("%d\n",ret1);
+//     int ret2=memcmp(arr1,arr3,12);
+//     printf("%d\n",ret2);
+//     return 0;
+// }
+
+//memset
+
+// int main()
+// {
+//     char arr[]="Hello world";
+//     memset(arr,'x',5);
+//     printf("%s ",arr);
+//     return 0;
+// }
