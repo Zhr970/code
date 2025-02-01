@@ -1,5 +1,6 @@
 #include "contact.h"
 
+//静态版本
 void InitContact(Contact* pc)
 {
     assert(pc);
@@ -7,6 +8,22 @@ void InitContact(Contact* pc)
     memset(pc->data,0,sizeof(pc->data));
     
 }
+
+//动态版本
+// int InitContact(Contact* pc)
+// {
+//     assert(pc);
+//     pc->count=0;
+//     pc->data=(PeoInfo*)calloc(DeFAULT_SZ,sizeof(PeoInfo));
+//     if(pc->data==NULL)
+//     {
+//         printf("InitContact::%s\n",strerror(errno));
+//         return 1;
+//     }
+//     pc->capacity=DEFAULT_SZ;
+//     return 0;
+// }
+
 int FindName(Contact* pc,char name[])
 {
     assert(pc);
@@ -23,6 +40,9 @@ int FindName(Contact* pc,char name[])
 
 
 }
+
+//静态版本
+
 void AddContact(Contact* pc)
 {
     assert(pc);
@@ -40,6 +60,44 @@ void AddContact(Contact* pc)
     pc->count++;
     printf("增加成功\n");
 }
+
+//动态版本
+
+// void CheckCaapacity(Contact* pc)
+// {
+//     if(pc->count==pc->capacity)
+//     {
+//         PeoInfo*ptr=(PeoInfo*)realloc(pc->data,(pc->capacity+INC_SZ)*sizeof(PeoInfo));
+//         if(ptr==NULL)
+//         {
+//             printf("ADDContact::%S\n",strerror(errno));
+//             return;
+//         }
+//         else
+//         {
+//             pc->data=ptr;
+//             pc->capacity+=INC_SZ;
+//             printf("增容成功，请输入对应信息\n");
+//         }
+//         return;
+//     }
+// }
+
+// void AddContact(Contact* pc)
+// {
+//     assert(pc);
+//     //增容
+//     CheckCapacity(pc);
+
+//     printf("请输入名字:");
+//     scanf("%s",pc->data[pc->count].name);
+//     printf("请输入年龄:");
+//     scanf("%d",&pc->data[pc->count].age);
+//     printf("请输入性别:");
+//     scanf("%s",pc->data[pc->count].sex);
+//     pc->count++;
+//     printf("增加成功\n");
+// }
 
 void DelContact(Contact* pc)
 {
@@ -141,3 +199,11 @@ void SortContact(Contact* pc)
             pc->data[i].sex);
     }
 }
+
+
+// void DestroyContact(Contact* pc)
+// {
+//     assert(pc);
+//     free(pc->data);
+//     pc->data =NULL;
+// }

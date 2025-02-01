@@ -59,6 +59,7 @@ int main()
                 printf("\n");
                 break;
             case EXIT:
+                //DestroyContact(&con);
                 printf("已退出\n");
                 break;
             default:
