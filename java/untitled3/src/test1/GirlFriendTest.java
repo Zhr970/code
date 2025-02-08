@@ -1,4 +1,4 @@
-package test;
+package test1;
 
 //public class GirlFriendTest {
 //    public static void main(String[] args) {
