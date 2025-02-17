@@ -1,3 +1,5 @@
+package test1;
+
 public class GoodsTest {
     public static void main(String[] args) {
         Goods[] arr = new Goods[10];
